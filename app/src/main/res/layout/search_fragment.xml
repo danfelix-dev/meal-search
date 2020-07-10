@@ -26,6 +26,7 @@
             android:hint="@string/search_insert_meal"
             android:imeOptions="actionSearch"
             android:inputType="text"
+            android:text="@{viewModel.query}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
