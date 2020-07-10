@@ -3,8 +3,7 @@
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_vertical_header">4dp</dimen>
-    <dimen name="text_large">64sp</dimen>
-    <dimen name="text_medium">38sp</dimen>
-    <dimen name="text_small">20sp</dimen>
+    <dimen name="text_medium">24sp</dimen>
+    <dimen name="text_small">14sp</dimen>
     <dimen name="size_thumbnail_image">32dp</dimen>
 </resources>
