@@ -7,7 +7,6 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
-import com.bumptech.glide.Glide
 import com.zshock.mealsearch.R
 import com.zshock.mealsearch.databinding.SearchFragmentBinding
 import com.zshock.mealsearch.domain.model.Meal

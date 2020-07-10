@@ -21,5 +21,8 @@ class Meal : Parcelable {
     @SerializedName("strInstructions")
     val instructions: String? = null
 
+    @SerializedName("strYoutube")
+    val videoUrl: String? = null
+
     var ingredients: List<String>? = null
 }
