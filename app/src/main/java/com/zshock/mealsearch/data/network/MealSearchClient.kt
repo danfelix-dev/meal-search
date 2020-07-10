@@ -10,4 +10,7 @@ interface MealSearchClient {
     @GET("search.php")
     fun fetchMeals(@Query("s") query: String): Call<SearchResponse>
 
+    @GET("random.php")
+    fun fetchRandomMeal(): Call<SearchResponse>
+
 }

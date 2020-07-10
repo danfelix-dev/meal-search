@@ -55,4 +55,8 @@ class Api {
         return client.fetchMeals(query)
     }
 
+    fun fetchRandomMeal(): Call<SearchResponse> {
+        return client.fetchRandomMeal()
+    }
+
 }

@@ -7,8 +7,10 @@ import com.bumptech.glide.Glide
 import com.zshock.mealsearch.R
 
 @BindingAdapter("imageUrl")
-fun bindImageUrl(imageView: ImageView, imageUrl: String) {
-    Glide.with(imageView.context).load(imageUrl.replace("http://", "https://")).into(imageView);
+fun bindImageUrl(imageView: ImageView, imageUrl: String?) {
+    if (imageUrl != null) {
+        Glide.with(imageView.context).load(imageUrl.replace("http://", "https://")).into(imageView);
+    }
 }
 
 @BindingAdapter(value = ["instructions", "ingredients"])

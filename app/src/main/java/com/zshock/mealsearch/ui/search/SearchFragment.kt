@@ -7,10 +7,12 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
+import com.bumptech.glide.Glide
 import com.zshock.mealsearch.R
 import com.zshock.mealsearch.databinding.SearchFragmentBinding
 import com.zshock.mealsearch.domain.model.Meal
 import com.zshock.mealsearch.ui.base.BaseFragment
+import com.zshock.mealsearch.ui.bindImageUrl
 
 class SearchFragment : BaseFragment(), SearchAdapter.Callback {
 
@@ -30,6 +32,12 @@ class SearchFragment : BaseFragment(), SearchAdapter.Callback {
         binding.recyclerView.adapter = adapter
         viewModel.items.observeForever {
             adapter.submitList(it.data)
+        }
+
+        viewModel.randomItems.observeForever {
+            if (it.error == null && context != null) {
+                bindImageUrl(binding.bottomBannerImageView, it.data?.get(0)?.thumbnailUrl)
+            }
         }
 
         binding.searchEditText.addTextChangedListener(object : TextWatcher {
