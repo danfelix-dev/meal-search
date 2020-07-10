@@ -1,7 +1,10 @@
 package com.zshock.mealsearch.data.network
 
+import com.google.gson.GsonBuilder
 import com.zshock.mealsearch.MealSearchApplication
+import com.zshock.mealsearch.data.repository.MealDeserializer
 import com.zshock.mealsearch.data.repository.SearchResponse
+import com.zshock.mealsearch.domain.model.Meal
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -36,10 +39,13 @@ class Api {
                 chain.proceed(request)
             }
 
+        val gsonBuilder = GsonBuilder()
+        gsonBuilder.registerTypeAdapter(Meal::class.java, MealDeserializer())
+
         val builder: Retrofit.Builder = Retrofit.Builder()
         val retrofit: Retrofit = builder
             .baseUrl(API_BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gsonBuilder.create()))
             .client(httpClient.build())
             .build()
         client = retrofit.create()
