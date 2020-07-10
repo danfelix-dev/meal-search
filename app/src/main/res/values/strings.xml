@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MealSearch</string>
+    <string name="search_insert_meal">Search for a meal…</string>
+    <string name="not_implemented">Not implemented</string>
+</resources>
