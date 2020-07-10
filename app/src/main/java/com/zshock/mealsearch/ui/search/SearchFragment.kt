@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import com.zshock.mealsearch.R
 import com.zshock.mealsearch.databinding.SearchFragmentBinding
@@ -48,8 +48,8 @@ class SearchFragment : BaseFragment(), SearchAdapter.Callback {
     }
 
     override fun onMealSelected(meal: Meal) {
-        // TODO: meal detail
-        Toast.makeText(context, R.string.not_implemented, Toast.LENGTH_SHORT).show()
+        val direction = SearchFragmentDirections.actionSearchFragmentToDetailFragment(meal)
+        findNavController().navigate(direction)
     }
 
 }

@@ -17,4 +17,7 @@ class Meal : Parcelable {
 
     @SerializedName("strCategory")
     val category: String? = null
+
+    @SerializedName("strInstructions")
+    val instructions: String? = null
 }
